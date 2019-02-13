@@ -1,0 +1,26 @@
+{
+  "name": "obs2go-appplace",
+  "version": "1.0.0",
+  "description": "OBS2GO App Place",
+  "main": "index.html",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "obs2go",
+    "applace"
+  ],
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-purgecss": "^1.1.1",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "bulma": "^0.7.4",
+    "bulma-checkradio": "^2.1.0"
+  }
+}

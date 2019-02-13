@@ -1,0 +1,166 @@
+@import "./overrides";
+@import "../../node_modules/bulma/bulma";
+@import "../../node_modules/bulma-checkradio/dist/css/bulma-checkradio";
+@import "./spacings";
+
+.hero.is-medium {
+  padding: 5rem 2rem;
+}
+
+.hero.has-bg-img {
+  background: url("../images/obs2go-hero-mobile.jpg") center center;
+  background-size: cover;
+}
+
+.filters {
+  display: none;
+}
+
+.filters.is-active {
+  display: block;
+}
+
+.tile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tile-image {
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.tile-content {
+  flex-grow: 1;
+  overflow: hidden;
+
+}
+
+.tile-content .title {
+  line-height: 1.6rem;
+}
+
+.tile-content .tile-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tile-content .tile-downloads {
+  flex-shrink: 0;
+}
+
+.footer {
+  color: $grey;
+  padding-bottom: 2rem;
+}
+
+.footer ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.footer .icon {
+  color: $white;
+}
+
+.footer a .icon:hover {
+  color: $primary;
+}
+
+.copiright {
+  background-color: #1e1f21;
+  padding: 1rem;
+  text-align: center;
+}
+
+.is-horizontal-center {
+  justify-content: center;
+}
+
+.has-text-muted {
+  color: #556b89;
+}
+
+.has-text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.star-empty {
+  opacity: 0.5;
+}
+
+.divider {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+.divider > .divider-text {
+  position: relative;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.divider > .divider-text:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 9999px;
+  height: 1px;
+  background: $grey-light;
+}
+
+.is-checkradio[type=checkbox]+label:before {
+  background-color: #fff;
+}
+
+hr {
+  background-color: $grey-light;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 1.5rem 0;
+}
+
+@media screen and (min-width: 769px) {
+  .hero.is-medium {
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+  }
+
+  .hero.has-bg-img.has-bg-img {
+    background: url("../images/obs2go-hero.png") top center;
+  }
+
+  .filters {
+    display: block;
+  }
+
+  .toggle-filters {
+    display: none;
+  }
+
+  .tile {
+    flex-direction: column;
+  }
+
+  .tile-image {
+    margin-right: 0;
+  }
+
+  .tile-content {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .tile-content .title {
+    text-align: center;
+  }
+}

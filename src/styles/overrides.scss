@@ -1,0 +1,21 @@
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/functions";
+
+$primary: #71acdd;
+$danger: #fc7795;
+$link: $primary;
+
+$body-background-color: #f1f1f1;
+
+$navbar-background-color: $black;
+$navbar-item-color: $grey;
+$navbar-item-hover-color: $primary;
+$navbar-item-active-color: $primary;
+$navbar-item-hover-background-color: $grey-darker;
+$navbar-burger-color: $primary;
+
+$box-shadow: 0 0 2px $grey-light;
+$box-link-hover-shadow: 0 10px 30px $grey-lighter;
+$box-link-active-shadow: $box-shadow;
+
+$footer-background-color: #272729;
