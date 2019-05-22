@@ -57,7 +57,7 @@ const styles = () => {
       onError: console.error.bind(console, 'Sass error:')
     }))
     .pipe(purgeCss({
-      content: [paths.pages.src]
+      content: ['./src/pages/**/*.ejs']
     }))
     .pipe(cleanCss())
     .pipe(gulp.dest(paths.styles.dest));
