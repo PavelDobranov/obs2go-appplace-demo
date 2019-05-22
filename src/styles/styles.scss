@@ -34,7 +34,6 @@
 .tile-content {
   flex-grow: 1;
   overflow: hidden;
-
 }
 
 .tile-content .title {
@@ -117,7 +116,7 @@
   background: $grey-light;
 }
 
-.is-checkradio[type=checkbox]+label:before {
+.is-checkradio[type="checkbox"] + label:before {
   background-color: #fff;
 }
 
@@ -127,6 +126,56 @@ hr {
   display: block;
   height: 1px;
   margin: 1.5rem 0;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.header-content .image {
+  margin: 1rem auto;
+}
+
+.header-content .title {
+  text-align: center;
+}
+
+.header-content .meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-content .meta-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-content .separator {
+  display: none;
+}
+
+.header-content .separator:after {
+  content: "|";
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /*16:9*/
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 769px) {
@@ -162,5 +211,31 @@ hr {
 
   .tile-content .title {
     text-align: center;
+  }
+
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header-content .image {
+    margin: 1rem;
+  }
+
+  .header-content .content {
+    margin-left: 1rem;
+  }
+
+  .header-content .title {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .header-content .meta {
+    flex-direction: row;
+  }
+
+  .header-content .separator {
+    display: inline-block;
   }
 }

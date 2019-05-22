@@ -1,13 +1,16 @@
 const gulp = require('gulp');
+const ejs = require('gulp-ejs');
+const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const purgeCss = require('gulp-purgecss');
 const cleanCss = require('gulp-clean-css');
+
 const browserSync = require('browser-sync');
 const del = require('del');
 
 const paths = {
-  html: {
-    src: './src/index.html',
+  pages: {
+    src: './src/pages/*.ejs',
     dest: './dist'
   },
   styles: {
@@ -38,9 +41,11 @@ const serve = done => {
 
 const clean = () => del(['dist']);
 
-const html = () => {
-  return gulp.src(paths.html.src)
-    .pipe(gulp.dest(paths.html.dest));
+const pages = () => {
+  return gulp.src(paths.pages.src)
+    .pipe(ejs())
+    .pipe(rename({ extname: '.html' }))
+    .pipe(gulp.dest(paths.pages.dest));
 };
 
 const styles = () => {
@@ -52,7 +57,7 @@ const styles = () => {
       onError: console.error.bind(console, 'Sass error:')
     }))
     .pipe(purgeCss({
-      content: [paths.html.src]
+      content: [paths.pages.src]
     }))
     .pipe(cleanCss())
     .pipe(gulp.dest(paths.styles.dest));
@@ -64,11 +69,11 @@ const images = () => {
 }
 
 const watch = () => {
-  gulp.watch([paths.html.src], gulp.series(html, reload));
+  gulp.watch([paths.pages.src], gulp.series(pages, reload));
   gulp.watch([paths.styles.src], gulp.series(styles, reload));
   gulp.watch([paths.images.src], gulp.series(images, reload));
 };
 
-gulp.task('dev', gulp.series(clean, html, styles, images, serve, watch));
+gulp.task('dev', gulp.series(clean, pages, styles, images, serve, watch));
 
-gulp.task('build', gulp.series(clean, html, styles, images));
+gulp.task('build', gulp.series(clean, pages, styles, images));
